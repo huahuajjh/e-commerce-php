@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		
+		<title>插件开发手册</title>
+		
+		
+		<link rel="stylesheet" href="./static/haidao.css">
+		<link rel="stylesheet" href="./static/public.css">
+		
+		
+		
+	<link rel="stylesheet" href="./static/faq.css"><link rel="stylesheet" href="./static/template.css"></head>
+	<body>
+				
+		
+		
+		
+		
+		<div class="container faq" style="
+    width: 100%;
+    padding-top: 0;
+">
+			<!--left-->
+			<div class="faq-l  margin-big-right  " style="
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+">
+				<!-- 海盗模板引擎  -->
+				<h2><a class="anchor" href="#前言">前言</a></h2>
+<h2><a class="anchor" href="#插件目录">插件目录</a></h2>
+<h2><a class="anchor" href="#目录结构">目录结构</a></h2>
+<h2><a class="anchor" href="#准备工作">准备工作</a></h2>
+<h2><a class="anchor" href="#命名规范">命名规范</a></h2>
+<h3><a class="anchor" href="#插件模块">插件模块</a></h3>
+<h3><a class="anchor" href="#变量配置">变量配置</a></h3>
+<h3><a class="anchor" href="#参数读取">参数读取</a></h3>
+<h2><a class="anchor" href="#嵌入开发">嵌入开发</a></h2>
+<h3><a class="anchor" href="#安装脚本">安装脚本</a></h3>
+<h3><a class="anchor" href="#卸载脚本">卸载脚本</a></h3>
+<h3><a class="anchor" href="#注意事项">注意事项</a></h3>			</div>
+			<!--right-->
+			<div class="faq-r " style="
+    margin-left: 260px;
+">
+				<!--海盗模板引擎-->
+				<h2><a id="前言" class="anchor" href="#前言">前言</a></h2>
+<p>海盗拥有一套较为完善的插件机制。合理使用内置插件机制，您可以更好的将自己的个性化功能需求无缝整合到海盗产品并保持代码独立而易于维护。通常情况下，海盗系统的后续产品版本升级并不会直接影响插件的可用性。</p>
+<p>故我们鼓励通过基于海盗插件机制进行个性化需求定制和研发。但请注意，过多的安装外部插件可能对系统性能有较大影响。</p>
+<h2><a id="插件目录" class="anchor" href="#插件目录">插件目录</a></h2>
+<p>官方建议的插件目录如下：</p>
+<h2><a id="目录结构" class="anchor" href="#目录结构">目录结构</a></h2>
+<pre><code>
+└─identifier/ 插件目录
+   ├─include/
+       ├─ hook.inc.php  插件注册（按需）
+       └─ cache.inc.php 缓存接口（按需）
+   ├─hooks/
+       └─hook.class.php 嵌入脚本（按需）
+   ├─config.xml   安装更新配置文件（必需）
+   ├─template/ 模版目录（按需）
+   ├─xxx.inc.php   访问接口(按需)
+   ├─install.php 安装脚本（根据config.xml定义安装脚本名称）
+   ├─upgrade.php 升级脚本（根据config.xml定义升级脚本名称）
+   └─install.php 卸载脚本（按需）
+</code></pre>
+<h2><a id="准备工作" class="anchor" href="#准备工作">准备工作</a></h2>
+<p>在编写插件之前，您应当首先对插件实现的流程有一个大致的了解，以下是我们推荐的插件编写流程：</p>
+<ol>
+<li>插件功能评估并确定最终需求；</li>
+<li>插件概括性设计（包括不限于菜单、参数及数据库结构等）；</li>
+<li>编写插件代码及测试；</li>
+<li>整理插件说明书，包括适用版本、功能概述、兼容性声明、使用说明及安装和卸载方法等；</li>
+<li>（公开）发布您的插件；</li>
+</ol>
+<h2><a id="命名规范" class="anchor" href="#命名规范">命名规范</a></h2>
+<p>为了更好的统一和规范插件与系统程序编码风格，海盗系统按照如下规范对程序及模板进行命名约束，请在设计插件时尽可能遵循此规范：</p>
+<ul>
+<li>可以通过浏览器访问的模块文件，以 .inc.php 命名。仅允许特定条件访问的，请在文件开始时做好防范。</li>
+<li>model类文件以model_service.class.php/model_table.class.php命名，分别代表服务层和数据层；</li>
+<li>hook 类文件以 .class.php 命名</li>
+<li>hook注册文件请以./plugin/<em>identifier</em>/include/hook.inc.php文件列出，如果插件里没有hook请务必不要有该文件；</li>
+<li>模板文件，以 .htm 命名；存放至 ./plugin/<em>identifier</em>/template 命名；</li>
+<li>内容为空的目录必须存放一个 index.htm　的空白文件，防止目录被列出；</li>
+</ul>
+<h3><a id="插件模块" class="anchor" href="#插件模块">插件模块</a></h3>
+<p>插件模块共分为三种类型：</p>
+<ul>
+<li>嵌入脚本：嵌入式开发、动态更改数据，以hook.class.php存在；</li>
+<li>缓存接口：插件自定义缓存接口，会在系统后台“更新缓存”时同步触发已开启的插件缓存接口，以include/cache.inc.php存在；</li>
+<li>访问接口：用于纯访问性质的接口，类似于标准mvc里的控制器方法。以模块名.inc.php存在。</li>
+</ul>
+<p><em>注意</em>：</p>
+<ul>
+<li>提供给前台用户访问的接口，可直接通过 <em>plugin.php?id=插件标识:模块名</em> 访问。</li>
+<li>嵌入脚本的传参需要用引用传参的方式，因此开发者需要在不破坏原有的数据结构的基础上进行数据的更改，否则会造成与其他插件不可共存的情况。因此在开发时，一定要充分测试！</li>
+</ul>
+<h3><a id="变量配置" class="anchor" href="#变量配置">变量配置</a></h3>
+<p>通用情况下，我们将插件变量配置保存在hd_appvar表中，同步保存在缓存文件appvars.php中，您可以直接通过cache('appvars')来获取当前插件的配置信息。
+系统默认内置支持如下类型的变量：</p>
+<ul>
+<li>字串(text)</li>
+<li>文本(textarea)</li>
+<li>开启/关闭(enabled)</li>
+<li>单选(radio)</li>
+<li>复选(checkbox)</li>
+<li>下拉框(select)</li>
+<li>日期/时间(calendar)</li>
+<li>颜色(color)</li>
+<li>编辑器(editor)</li>
+<li>文件选择(file)</li>
+</ul>
+<p>如果您有更好的建议，欢迎与我们取得联系，我们会优先并慎重考虑您的意见，根据产品自身情况酌情开放更多的接口供开发者使用。</p>
+<h3><a id="参数读取" class="anchor" href="#参数读取">参数读取</a></h3>
+<p>在海盗系统中，所有插件的配置可以通过<code>model('admin/app')-&gt;get_appvars()</code>来获得,插件配置信息将以数组形式返回。</p>
+<h2><a id="嵌入开发" class="anchor" href="#嵌入开发">嵌入开发</a></h2>
+<p>海盗系统在模板及业务功能中预埋了钩子(hook)。通过插件的嵌入脚本对这些钩子进行拦截、对所拦截的内容进行个性化改造来实现对业务过程、返回结果的处理。</p>
+<pre><code>&lt;?php
+class plugin_identifier extends plugin {
+  public function hookid() {
+  }
+}
+</code></pre>
+<p>其中<em>identifier</em> 代表当前插件的唯一标识，而 <em>hookid</em> 则代表嵌入点的名称，我们有固定的一些嵌入点。</p>
+<h4><a id="内置功能嵌入点" class="anchor" href="#内置功能嵌入点">内置功能嵌入点</a></h4>
+<table>
+<thead>
+<tr>
+<th>嵌入点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pre_system</td>
+<td>系统初始化</td>
+</tr>
+<tr>
+<td>pre_control</td>
+<td>控制器方法之前</td>
+</tr>
+<tr>
+<td>post_control</td>
+<td>控制器方法之后</td>
+</tr>
+<tr>
+<td>pre_output</td>
+<td>模板渲染之前</td>
+</tr>
+<tr>
+<td>tmpl_compile</td>
+<td>模板编译</td>
+</tr>
+<tr>
+<td>pre_input</td>
+<td>变量输出之前</td>
+</tr>
+<tr>
+<td>member_init</td>
+<td>用户数据初始化</td>
+</tr>
+<tr>
+<td>pay_success</td>
+<td>第三方支付成功后回调</td>
+</tr>
+<tr>
+<td>email_validate</td>
+<td>邮箱验证</td>
+</tr>
+<tr>
+<td>register_validate</td>
+<td>注册验证</td>
+</tr>
+<tr>
+<td>mobile_validate</td>
+<td>手机验证</td>
+</tr>
+<tr>
+<td>money_change</td>
+<td>余额变更</td>
+</tr>
+<tr>
+<td>after_login</td>
+<td>用户登陆后</td>
+</tr>
+<tr>
+<td>after_register</td>
+<td>用户注册后</td>
+</tr>
+<tr>
+<td>create_order</td>
+<td>创建订单</td>
+</tr>
+<tr>
+<td>confirm_order</td>
+<td>确认订单</td>
+</tr>
+<tr>
+<td>skus_delivery</td>
+<td>订单商品发货</td>
+</tr>
+<tr>
+<td>delivery_finish</td>
+<td>确认收货</td>
+</tr>
+<tr>
+<td>before_cart_add</td>
+<td>加入购物车之前</td>
+</tr>
+<tr>
+<td>no_login</td>
+<td>登陆之前</td>
+</tr>
+<tr>
+<td>cart_lists_extra</td>
+<td>购物车列表输出之前</td>
+</tr>
+<tr>
+<td>order_log_add</td>
+<td>写入订单日志</td>
+</tr>
+<tr>
+<td>order_parcel_create</td>
+<td>生成发货单之前</td>
+</tr>
+<tr>
+<td>order_parcel_log_create</td>
+<td>生成发货单日志之前</td>
+</tr>
+<tr>
+<td>carts_extra</td>
+<td>下单时额外的结算数据</td>
+</tr>
+<tr>
+<td>build_order_info</td>
+<td>主订单数据创建</td>
+</tr>
+<tr>
+<td>order_order_create_sub</td>
+<td>子订单数据创建</td>
+</tr>
+<tr>
+<td>order_create_skus</td>
+<td>订单商品表数据创建</td>
+</tr>
+<tr>
+<td>order_sku_records</td>
+<td>购买记录输出之前</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="内置默认模板嵌入点" class="anchor" href="#内置默认模板嵌入点">内置默认模板嵌入点</a></h4>
+<table>
+<thead>
+<tr>
+<th>嵌入点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global_header</td>
+<td>公共头部</td>
+</tr>
+<tr>
+<td>global_footer</td>
+<td>公共底部</td>
+</tr>
+<tr>
+<td>left_site_bar</td>
+<td>公共头部顶部左侧菜单</td>
+</tr>
+<tr>
+<td>right_site_bar</td>
+<td>公共头部顶部右侧菜单</td>
+</tr>
+<tr>
+<td>brand_left</td>
+<td>品牌详情页左侧</td>
+</tr>
+<tr>
+<td>consult_top</td>
+<td>咨询页面顶部</td>
+</tr>
+<tr>
+<td>detail_goods_prom_info</td>
+<td>商品详情页促销信息</td>
+</tr>
+<tr>
+<td>detail_goods_operate</td>
+<td>商品详情页加入购物车按钮后</td>
+</tr>
+<tr>
+<td>detail_goods_info</td>
+<td>商品详情页商品概况</td>
+</tr>
+<tr>
+<td>detail_extra_detail</td>
+<td>商品详情页右侧底部</td>
+</tr>
+<tr>
+<td>lists_left</td>
+<td>商品列表页左侧</td>
+</tr>
+<tr>
+<td>lists_order</td>
+<td>商品列表页排序</td>
+</tr>
+<tr>
+<td>search_top</td>
+<td>搜索页面顶部</td>
+</tr>
+<tr>
+<td>member_common_header</td>
+<td>会员公共页面头部</td>
+</tr>
+<tr>
+<td>account_info_extra</td>
+<td>会员中心用户信息</td>
+</tr>
+<tr>
+<td>account_box_extra</td>
+<td>会员中心底部</td>
+</tr>
+<tr>
+<td>before_login_btn</td>
+<td>登陆页提交按钮之前</td>
+</tr>
+<tr>
+<td>login_box_footer</td>
+<td>登陆页提交按钮之后</td>
+</tr>
+<tr>
+<td>menu_account_extra_menu</td>
+<td>账户设置页左侧菜单</td>
+</tr>
+<tr>
+<td>member_order_lists_left</td>
+<td>会员首页左侧菜单订单信息底部</td>
+</tr>
+<tr>
+<td>member_extra_lists</td>
+<td>会员首页左侧菜单信息中心底部</td>
+</tr>
+<tr>
+<td>order_detail_header_extra_info</td>
+<td>订单详情页头部</td>
+</tr>
+<tr>
+<td>order_detail_info</td>
+<td>订单详情页订单信息底部</td>
+</tr>
+<tr>
+<td>before_register_btn</td>
+<td>注册页注册按钮之前</td>
+</tr>
+<tr>
+<td>cart_header_extra_info</td>
+<td>购物车详情页头部</td>
+</tr>
+<tr>
+<td>cart_settlement_footer</td>
+<td>购物车详情页底部</td>
+</tr>
+<tr>
+<td>settlement_middle_left</td>
+<td>订单结算页优惠信息底部</td>
+</tr>
+<tr>
+<td>settlement_down_right</td>
+<td>订单结算页结算信息底部</td>
+</tr>
+<tr>
+<td>payment_between_order</td>
+<td>订单提交成功页顶部</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="内置wap端模板嵌入点" class="anchor" href="#内置wap端模板嵌入点">内置wap端模板嵌入点</a></h4>
+<table>
+<thead>
+<tr>
+<th>嵌入点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wap_global_footer</td>
+<td>公共底部</td>
+</tr>
+<tr>
+<td>wap_header</td>
+<td>公共头部</td>
+</tr>
+<tr>
+<td>detail_price_right</td>
+<td>商品详情页商品价格底部</td>
+</tr>
+<tr>
+<td>wap_goods_detail_extra</td>
+<td>商品详情页商品促销信息底部</td>
+</tr>
+<tr>
+<td>wap_goods_detail_footer</td>
+<td>商品详情页底部</td>
+</tr>
+<tr>
+<td>wap_member_index_extra_info</td>
+<td>会员中心首页菜单底部</td>
+</tr>
+<tr>
+<td>wap_login_footer</td>
+<td>登陆页底部</td>
+</tr>
+<tr>
+<td>wap_cart_settlement_footer</td>
+<td>购物车详情页底部</td>
+</tr>
+<tr>
+<td>wap_settlement_extra</td>
+<td>订单结算发票信息底部</td>
+</tr>
+<tr>
+<td>wap_settlement_info</td>
+<td>订单结算页底部</td>
+</tr>
+<tr>
+<td>wap_settlement_send_time</td>
+<td>选择支付方式提交按钮之前</td>
+</tr>
+</tbody>
+</table>
+<p>另外为了增强系统的扩展性，我们还在一些类中预埋了钩子。比如在form.class.php类中，我们在编辑器、文本框、选择框等输出之前都分别埋了钩子，用于开发者替换编辑器、改变文本框、选择框的样式，不用去全站修改这些内容，一键实现替换。</p>
+<p>而在默认模版中，我们也在具有拓展空间的地方预埋了钩子。如果您自己开发或购买了其他模版，请一定要对照默认模版，在您的模版里也预埋钩子。模版中预埋钩子形如{hook/<em>hookid</em>}。</p>
+<p><strong>如果您认为目前预埋的钩子无法满足您的开发需求，请一定要联系我们增加钩子</strong></p>
+<h3><a id="安装脚本" class="anchor" href="#安装脚本">安装脚本</a></h3>
+<p>若您的插件安装、升级涉及到数据表、缓存、新增文件等，那么需要您在插件中增加安装、升级脚本。通常情况这样约定的：</p>
+<ul>
+<li>安装脚本：install.php</li>
+<li>升级脚本：upgrade.php</li>
+</ul>
+<p>插件作者只需要在插件安装配置的config.xml文件结尾的地方加上相关的配置即可</p>
+<pre><code>  &lt;item id="installfile"&gt;&lt;![CDATA[install.php]]&gt;&lt;/item&gt;
+        &lt;item id="upgradefile"&gt;&lt;![CDATA[upgrade.php]]&gt;&lt;/item&gt;
+&lt;/item&gt;
+&lt;/root&gt;</code></pre>
+<p>为了方便开发者，我们也为安装、升级数据库文件的执行提供了便利，您可以像上述一样配置安装、升级的sql文件：</p>
+<pre><code>  &lt;item id="installsql"&gt;&lt;![CDATA[install.sql]]&gt;&lt;/item&gt;
+        &lt;item id="upgradesql"&gt;&lt;![CDATA[upgrade.sql]]&gt;&lt;/item&gt;
+&lt;/item&gt;
+&lt;/root&gt;</code></pre>
+<p>在您创建安装sql:install.sql，在安装时会自动执行安装sql中的sql语句。这里的sql统一用hd_为前缀，我们会在安装时对改变前缀的数据表统一处理，无需担忧。</p>
+<h3><a id="卸载脚本" class="anchor" href="#卸载脚本">卸载脚本</a></h3>
+<p>插件作者需在插件目录创建uninstall.php为卸载脚本，uninstall.php为卸载sql。这里无需像安装和升级一样定义。</p>
+<h3><a id="注意事项" class="anchor" href="#注意事项">注意事项</a></h3>
+<p>插件的前台访问接口，因全部使用外壳调用，请务必在第一行加入</p>
+<pre><code>if(!defined('IN_PLUGIN')) {
+  exit('Access Denied');
+}</code></pre>
+<p>后台程序第一行加入：</p>
+<pre><code>if(!defined('IN_ADMIN')) {
+  exit('Access Denied');
+}</code></pre>
+<p>以免其被 URL 直接请求调用，产生安全问题。</p>			</div>
+		</div>
+			
+			
+		
+	
+
+
+
+</body></html>

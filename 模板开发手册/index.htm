@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html><head>
+		<title>模板开发手册</title>
+		<link rel="stylesheet" href="./static/haidao.css">
+	<link rel="stylesheet" href="./static/faq.css"><link rel="stylesheet" href="./static/template.css"></head>
+	<body>
+		<div class="container faq" style="
+    width: 100%;
+    padding-top: 0;
+">
+			<!--left-->
+
+			<div class="faq-l  margin-big-right  " style="
+    position: fixed;
+    overflow-y: auto;
+    height: 100%;
+">
+				<!-- 海盗模板引擎  -->
+				<h2><a class="anchor" href="#海盗模板引擎">海盗模板引擎</a></h2>
+<h2><a class="anchor" href="#什么是标签">什么是标签</a></h2>
+<h2><a class="anchor" href="#标签书写格式">标签书写格式</a></h2>
+<h2><a class="anchor" href="#通用标签">通用标签</a></h2>
+<h3><a class="anchor" href="#变量">变量</a></h3>
+<h3><a class="anchor" href="#常量">常量</a></h3>
+<h3><a class="anchor" href="#函数">函数</a></h3>
+<h3><a class="anchor" href="#模板引入">模板引入</a></h3>
+<h3><a class="anchor" href="#语言包">语言包</a></h3>
+<h3><a class="anchor" href="#条件">条件</a></h3>
+<h3><a class="anchor" href="#循环">循环</a></h3>
+<h2><a class="anchor" href="#内容标签">内容标签</a></h2>
+<h3><a class="anchor" href="#内容标签简介">内容标签简介</a></h3>
+<h3><a class="anchor" href="#书写格式">书写格式</a></h3>
+<h3><a class="anchor" href="#商品列表标签">商品列表标签</a></h3>
+<h3><a class="anchor" href="#分类列表标签">分类列表标签</a></h3>
+<h3><a class="anchor" href="#商品咨询列表">商品咨询列表</a></h3>
+<h3><a class="anchor" href="#品牌列表">品牌列表</a></h3>
+<h3><a class="anchor" href="#类型列表">类型列表</a></h3>
+<h3><a class="anchor" href="#评论列表">评论列表</a></h3>
+<h3><a class="anchor" href="#文章分类列表">文章分类列表</a></h3>
+<h3><a class="anchor" href="#文章列表">文章列表</a></h3>
+<h3><a class="anchor" href="#banner列表">banner列表</a></h3>
+<h3><a class="anchor" href="#友情链接">友情链接</a></h3>
+<h3><a class="anchor" href="#帮助中心">帮助中心</a></h3>
+<h3><a class="anchor" href="#导航列表">导航列表</a></h3>
+<h3><a class="anchor" href="#广告列表">广告列表</a></h3>
+<h3><a class="anchor" href="#组合营销列表">组合营销列表</a></h3>
+<h3><a class="anchor" href="#购买记录列表">购买记录列表</a></h3>
+<h3><a class="anchor" href="#注意事项">注意事项</a></h3>
+<h2><a class="anchor" href="#温馨提示">温馨提示</a></h2>			</div>
+
+			<!--right-->
+			<div class="faq-r " style="
+    margin-left: 260px;
+">
+				<!--海盗模板引擎-->
+				<h2><a id="海盗模板引擎" class="anchor" href="#海盗模板引擎">海盗模板引擎</a></h2>
+<p>海盗云商系统(以下简称海盗)的模板引擎是基于原始PHP的「解释型」模板文件引擎，故无论在模板文件里如何编写标签代码，引擎均会转换为原始PHP语句进行解析。</p>
+<blockquote>
+<p>也就是说，在海盗系统里，是可以直接书写原生PHP语句来执行的。</p>
+</blockquote>
+<h2><a id="什么是标签" class="anchor" href="#什么是标签">什么是标签</a></h2>
+<p><strong>标签存在的意义</strong>即是将原本复杂的原始PHP数据调用语句封装为简单易懂的格式化标签，便于归纳整理及团队协作。比如，让前端工程师直接完成数据的调用而不需知晓其内部的构造及原理。</p>
+<h2><a id="标签书写格式" class="anchor" href="#标签书写格式">标签书写格式</a></h2>
+<p>海盗标签全部使用 <code>{标签}</code> 的大括号形式书写。也可以用标签HTML语法注释的形式便写，以解决与其它部分模板引擎的冲突问题。以下格式均是标准的海盗标签书写格式：</p>
+<pre><code>{标签}</code></pre>
+<p>或</p>
+<pre><code>&lt;!--{标签}--&gt;</code></pre>
+<p>在「海盗」里，所有的标签书写格式有如下两种类型：</p>
+<ul>
+<li>独立式标签：<code>{标签}</code></li>
+<li>闭合式标签：<code>{标签}{/标签}</code></li>
+</ul>
+<p>「独立式标签」通常用于直接调用某个变量，而「闭合式标签」则通常用于调用数据列表，条件判断等各种复杂的功能。我们会在下面逐渐讲到。</p>
+<h2><a id="通用标签" class="anchor" href="#通用标签">通用标签</a></h2>
+<h3><a id="变量" class="anchor" href="#变量">变量</a></h3>
+<p>所谓「变量」，即是一个可变的量。通常由后台具体业务的执行结果所决定。它的调用方式为「独立式」标签：<code>{变量名}</code> ，比如：<code>{$site_name}</code> 表示「站点标题」，最终该标签会转换为原始的PHP语法：</p>
+<pre><code>&lt;?php echo $site_name;?&gt;</code></pre>
+<h3><a id="常量" class="anchor" href="#常量">常量</a></h3>
+<p>所有「常量」，即是一个固定的值。通常是在系统初始化的同时所定义的，它不能重复定义，也不能被外部值所更改。在海盗里，直接通过<code>{常量名}</code>调用即可。例如：</p>
+<pre><code>{CHARSET}</code></pre>
+<p>代表系统编码(utf-8)</p>
+<h3><a id="函数" class="anchor" href="#函数">函数</a></h3>
+<p>在海盗中，支持在模板文件里直接调用所有系统全局函数。调用方式为：</p>
+<pre><code>{函数名(参数)}</code></pre>
+<p>其中，函数名即已封装好的用于各种通用数据或业务的处理。而_参数_则根据具体该函数的定义或要求决定是否传递的值。例如：</p>
+<pre><code>{thumb(url,100,100)}</code></pre>
+<p>代表调用或生成路径为url的图片的缩略图，其中第一个参数<code>url</code>代表原图路径，后两个参数<code>100</code>代表缩略图的长和宽。</p>
+<h3><a id="模板引入" class="anchor" href="#模板引入">模板引入</a></h3>
+<p>模版引入有两种类型：</p>
+<ul>
+<li>当前模块：<code>{template 文件名}</code></li>
+<li>跨域模块：<code>{template 文件名 模块名}</code></li>
+</ul>
+<blockquote>
+<p>文件名支持路径，例：common/header</p>
+</blockquote>
+<h3><a id="语言包" class="anchor" href="#语言包">语言包</a></h3>
+<p>普通语言包：<code>{lang 变量名}</code>
+插件语言包：<code>{lang 插件标识:变量名}</code></p>
+<h3><a id="条件" class="anchor" href="#条件">条件</a></h3>
+<p>模板支持对动态数据的条件判断，根据不同条件输出最终的数据。</p>
+<ul>
+<li>单一条件：</li>
+</ul>
+<pre><code>{if 条件}
+    输出内容
+{/if}</code></pre>
+<p>会解析为：</p>
+<pre><code>&lt;?php
+if(条件) {
+    echo '输出内容';
+}
+?&gt;</code></pre>
+<p>如果是带有否则的，那么会：</p>
+<pre><code>{if 条件}
+    条件输出
+{else}
+    否则输出
+{/if}</code></pre>
+<p>转换为：</p>
+<pre><code>&lt;?php
+if(条件) {
+    echo '条件输出';
+} else {
+    echo '否则输出';
+}</code></pre>
+<ul>
+<li>多重条件</li>
+</ul>
+<pre><code>{if 条件1}
+    条件输出1
+{elseif 条件2}
+    条件输出2
+{else}
+    否则输出
+{/if}</code></pre>
+<p>转换为：</p>
+<pre><code>&lt;?php
+if(条件1) {
+    echo '条件输出1';
+} elseif(条件2) {
+    echo '条件输出2';
+} else {
+    echo '否则输出';
+}
+?&gt;</code></pre>
+<h3><a id="循环" class="anchor" href="#循环">循环</a></h3>
+<p>循环标签通常用于对数组的循环输出，一般在模板中以「列表」的形式体现。比如热门商品。它的基本格式为：</p>
+<pre><code>{loop 数组 指针 变量}
+    变量
+{/loop}</code></pre>
+<p>通常情况下「指针」可以留空。系统默认以变量<code>$n</code>存在。</p>
+<h2><a id="内容标签" class="anchor" href="#内容标签">内容标签</a></h2>
+<h3><a id="内容标签简介" class="anchor" href="#内容标签简介">内容标签简介</a></h3>
+<p>系统的「内容标签」是海盗系统中的核心标签，也是在模板制作中最常见的标签之一。我们必须熟练掌握「内容标签」的知识，才能制作出满足各种需求的个性化模板。</p>
+<h3><a id="书写格式" class="anchor" href="#书写格式">书写格式</a></h3>
+<pre><code>{hd:模块名 method="方法名" num="返回条数" where="[附加SQL条件]" order="[排序方式]" return="[返回变量名]" tagfile="[文件名]" cache="[缓存时间]" page="[当前分页]" pagefunc="[分页函数]" urlrule="[分页规则]"}
+....
+{/hd}</code></pre>
+<p>事例中的参数释义如下：</p>
+<ul>
+<li>模块名：所属模块,如商品列表标签在此处填<code>goods</code></li>
+<li>method:模块执行的方法,一般情况下列表填<code>lists</code>,列表分页填<code>page</code></li>
+<li>num:返回多少条数据，也可以用 标准的 limit 指定</li>
+<li>where:附加查询条件，按标准SQL语句书写</li>
+<li>order:标准的SQL排序</li>
+<li>return:返回变量名</li>
+<li>tagfile:指定标签库名（当模块拥有多个标签库而需要指定时使用）,后文中的<code>标签标识</code>即为当前标签的标签库名。如商品列表，此处应填goods</li>
+<li>cache：标签结果缓存时间，默认3600</li>
+<li>page：当前页码</li>
+<li>pagefunc：分页函数[函数名]</li>
+<li>urlrule：为分页链接指定分页的规则</li>
+</ul>
+<blockquote>
+<p>注意，带有<code>[]</code>符号的参数是可忽略的</p>
+</blockquote>
+<p>以下为我们整理的系统中具有代表性的内容标签，未列出的部分请开发人员参考以下内容即可：</p>
+<h3><a id="商品列表标签" class="anchor" href="#商品列表标签">商品列表标签</a></h3>
+<h4><a id="所属模块：goods" class="anchor" href="#所属模块：goods">所属模块：goods</a></h4>
+<h4><a id="标签标识：goods" class="anchor" href="#标签标识：goods">标签标识：goods</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>catid</td>
+<td>0</td>
+<td>所在分类，默认为全部分类</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用商品数量</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>0</td>
+<td>商品所属品牌ID，0为不限制</td>
+</tr>
+<tr>
+<td>statusext</td>
+<td>empty</td>
+<td>商品拓展状态（1：促销；2：热卖；3：新品; 4：推荐）</td>
+</tr>
+<tr>
+<td>show_switch</td>
+<td>empty</td>
+<td>是否开启列表页显示重复图片商品，默认不显示重复图片商品，建议在搜索和筛选结果时开启</td>
+</tr>
+<tr>
+<td>goods_ids</td>
+<td>empty</td>
+<td>用于传入指定sku_id,以逗号分割的字符串方式</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>商品附加条件，传入原生SQL语句</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>当前分页（存在此参数则代表标签支持分页）</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<p>调用 5 件促销商品完整代码：</p>
+<pre><code>{hd:goods tagfile="goods" method="lists" num="5" statusext="1"}
+    {loop $data $r}
+        商品标题：{$r[name]}
+    {/loop}
+{/hd}</code></pre>
+<h3><a id="分类列表标签" class="anchor" href="#分类列表标签">分类列表标签</a></h3>
+<p>分类列表用于调用商品分类的标签，通常用于页面的导航条、左侧所有分类等效果。</p>
+<h4><a id="所属模块：goods" class="anchor" href="#所属模块：goods">所属模块：goods</a></h4>
+<h4><a id="标签标识：category" class="anchor" href="#标签标识：category">标签标识：category</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>catid</td>
+<td>0</td>
+<td>上级分类ID，若存在此值，则代表调用子分类列表</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用数量</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>type</td>
+<td>empty</td>
+<td>分类类型（nav：导航；normal:列表；默认：既是导航也是列表）</td>
+</tr>
+<tr>
+<td>only</td>
+<td>0</td>
+<td>若该参数为1，则catid即为指定分类的id,多个可用','分隔</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<p>调用 10 个顶级分类</p>
+<pre><code>{hd:goods tagfile="category" method="lists" num="10"}
+{loop $data $r}
+    分类名称：{$r[name]}
+{/loop}
+{/hd}</code></pre>
+<p>调用 5个 指定分类</p>
+<pre><code>{hd:goods tagfile="category" method="lists" catid="1,2,3,4,5" only="1"}
+{loop $data $r}
+    分类名称：{$r[name]}
+{/loop}
+{/hd}</code></pre>
+<h3><a id="商品咨询列表" class="anchor" href="#商品咨询列表">商品咨询列表</a></h3>
+<h4><a id="所属模块：goods" class="anchor" href="#所属模块：goods">所属模块：goods</a></h4>
+<h4><a id="标签标识：consult" class="anchor" href="#标签标识：consult">标签标识：consult</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spu_id</td>
+<td>0</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>0</td>
+<td>子商品id</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>0</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用数量</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用示例" class="anchor" href="#调用示例">调用示例</a></h4>
+<pre><code>{hd:goods tagfile="consult" method="lists" spu_id="1" num="8"}
+    --
+{/hd}</code></pre>
+<h3><a id="品牌列表" class="anchor" href="#品牌列表">品牌列表</a></h3>
+<h4><a id="所属模块：goods" class="anchor" href="#所属模块：goods">所属模块：goods</a></h4>
+<h4><a id="标签标识：brand" class="anchor" href="#标签标识：brand">标签标识：brand</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isrecommend</td>
+<td>empty</td>
+<td>是否推荐品牌;默认全部,0:否 1:是</td>
+</tr>
+<tr>
+<td>catid</td>
+<td>empty</td>
+<td>根据商品分类id查找该分类下的品牌</td>
+</tr>
+<tr>
+<td>num</td>
+<td>20</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>sort倒序ID倒序</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:goods tagfile="brand" method="lists" num="10" order="sort asc" catid="35"}
+    --
+{/hd}</code></pre>
+<h3><a id="类型列表" class="anchor" href="#类型列表">类型列表</a></h3>
+<h4><a id="所属模块：goods" class="anchor" href="#所属模块：goods">所属模块：goods</a></h4>
+<h4><a id="标签标识：type" class="anchor" href="#标签标识：type">标签标识：type</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>empty</td>
+<td>调用类型属性方法：lists，调用商品规格方法：specs</td>
+</tr>
+<tr>
+<td>catid</td>
+<td>empty</td>
+<td>商品分类ID查找</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>可以看出，<code>类型</code>因其特殊性，和其他内容标签调用有所区别。</p>
+</blockquote>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<p>调用类型属性</p>
+<pre><code>{hd:goods tagfile="type" method="lists" catid="35"}
+    --
+{/hd}</code></pre>
+<p>调用类型规格</p>
+<pre><code>{hd:goods tagfile="type" method="specs" catid="35"}
+    --
+{/hd}</code></pre>
+<h3><a id="评论列表" class="anchor" href="#评论列表">评论列表</a></h3>
+<h4><a id="所属模块：comment" class="anchor" href="#所属模块：comment">所属模块：comment</a></h4>
+<h4><a id="标签标识：comment" class="anchor" href="#标签标识：comment">标签标识：comment</a></h4>
+<h4><a id="标签详解" class="anchor" href="#标签详解">标签详解</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spu_id</td>
+<td>0</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>0</td>
+<td>子商品id</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>0</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>mood</td>
+<td>empty</td>
+<td>评价类别（positive：好评；neutral：中评；negative：差评）</td>
+</tr>
+<tr>
+<td>is_shield</td>
+<td>empty</td>
+<td>是否审核（默认全部显示；0：未审核；1：已审核）</td>
+</tr>
+<tr>
+<td>num</td>
+<td>20</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>sort倒序id倒序</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:comment tagfile="comment" method="lists" num="10" order="sort asc" spu_id="3"}
+    --
+{/hd}</code></pre>
+<h3><a id="文章分类列表" class="anchor" href="#文章分类列表">文章分类列表</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解；category" class="anchor" href="#标签详解；category">标签详解；category</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>0</td>
+<td>父分类id</td>
+</tr>
+<tr>
+<td>display</td>
+<td>0</td>
+<td>默认全部显示；0：隐藏；1：显示</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc tagfile="category" parent_id="2"  method="lists" num="10"}
+    --
+{/hd}</code></pre>
+<h3><a id="文章列表" class="anchor" href="#文章列表">文章列表</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解：article" class="anchor" href="#标签详解：article">标签详解：article</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category_id</td>
+<td>0</td>
+<td>分类id</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc tagfile="article" category_id="2"  method="lists" num="10"}
+    --
+{/hd}</code></pre>
+<h3><a id="banner列表" class="anchor" href="#banner列表">banner列表</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解：focus" class="anchor" href="#标签详解：focus">标签详解：focus</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc method="lists" tagfile="focus" order="sort asc"}
+    --
+{/hd}</code></pre>
+<h3><a id="友情链接" class="anchor" href="#友情链接">友情链接</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解：friendlink" class="anchor" href="#标签详解：friendlink">标签详解：friendlink</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc method="lists" tagfile="friendlink" order="sort asc"}
+    --
+{/hd}</code></pre>
+<h3><a id="帮助中心" class="anchor" href="#帮助中心">帮助中心</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解：help" class="anchor" href="#标签详解：help">标签详解：help</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc method="lists" tagfile="help" order="sort asc"}
+    --
+{/hd}</code></pre>
+<h3><a id="导航列表" class="anchor" href="#导航列表">导航列表</a></h3>
+<h4><a id="所属模块：misc" class="anchor" href="#所属模块：misc">所属模块：misc</a></h4>
+<h4><a id="标签详解：navigation" class="anchor" href="#标签详解：navigation">标签详解：navigation</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:misc method="lists" tagfile="navigation" order="sort asc"}
+    --
+{/hd}</code></pre>
+<h3><a id="广告列表" class="anchor" href="#广告列表">广告列表</a></h3>
+<h4><a id="所属模块：ads" class="anchor" href="#所属模块：ads">所属模块：ads</a></h4>
+<h4><a id="标签详解：ads" class="anchor" href="#标签详解：ads">标签详解：ads</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td>0</td>
+<td>位置id</td>
+</tr>
+<tr>
+<td>num</td>
+<td>12</td>
+<td>调用条数</td>
+</tr>
+<tr>
+<td>where</td>
+<td>empty</td>
+<td>附件条件；原生SQL查询语句</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:ads tagfile="ads" method="lists" position="1" num="1"}
+    --
+{/hd}</code></pre>
+<h3><a id="组合营销列表" class="anchor" href="#组合营销列表">组合营销列表</a></h3>
+<p>用于展示和某一商品同参加组合营销的所有商品。</p>
+<h4><a id="所属模块：promotion" class="anchor" href="#所属模块：promotion">所属模块：promotion</a></h4>
+<h4><a id="标签详解：prom_group" class="anchor" href="#标签详解：prom_group">标签详解：prom_group</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sku_id</td>
+<td>0</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:promotion tagfile="prom_group" method="lists" sku_id="336"}
+    --
+{/hd}</code></pre>
+<h3><a id="购买记录列表" class="anchor" href="#购买记录列表">购买记录列表</a></h3>
+<p>用于展示某一商品的购买记录。</p>
+<h4><a id="所属模块：order" class="anchor" href="#所属模块：order">所属模块：order</a></h4>
+<h4><a id="标签详解：order" class="anchor" href="#标签详解：order">标签详解：order</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sid</td>
+<td>0</td>
+<td>商品id，是sku_id还是spu_id,取决于isspu的值</td>
+</tr>
+<tr>
+<td>isspu</td>
+<td>true</td>
+<td>决定是否sid是spu_id,true则为spu_id,false则为sku_id</td>
+</tr>
+<tr>
+<td>all</td>
+<td>true</td>
+<td>是否是所有sku的购买记录</td>
+</tr>
+<tr>
+<td>order</td>
+<td>empty</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>$page</td>
+<td>分页位置</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="调用实例" class="anchor" href="#调用实例">调用实例</a></h4>
+<pre><code>{hd:order tagfile="order" method="records" sid="1" isspu="true" all="true"}
+    --
+{/hd}</code></pre>
+<hr>
+<p>至此，所有的内置标签介绍完毕。</p>
+<h3><a id="注意事项" class="anchor" href="#注意事项">注意事项</a></h3>
+<p>所有的「内容标签」均会返回一个数组。您可以直接通过打印该数据来获取最终的元素集合。并且通过「通用标签」的数组循环<code>loop</code>来实现最终的数据调用。返回数据的的数组变量为<code>$data</code>。例如：</p>
+<pre><code>{loop $data $r}
+    &lt;li&gt;&lt;a href="{$r[link]}"&gt;{$r[title]}&lt;/a&gt;&lt;/li&gt;
+{/loop}</code></pre>
+<h2><a id="温馨提示" class="anchor" href="#温馨提示">温馨提示</a></h2>
+<p>其实最好的文档说明在系统默认模板里，模板模板中包含了绝大部分的标签实例。</p>			</div>
+		</div>
+
+
+			
+			
+		
+	
+
+
+
+
+
+	
+
+</body></html>

@@ -1,0 +1,169 @@
+.faq {
+	padding-top: 50px;
+	position: relative;
+}
+.faq-l {
+	width: 245px;
+}
+.use-box {
+	padding: 15px 15px;
+	background: #f5f5f5;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.use-icon {
+	background: url(../image/icon.png) no-repeat;
+	height: 14px;
+	width: 14px;
+	margin-top: 5px;
+	padding-left: 30px;
+}
+.use-r {
+	background: url(../image/icon-4.png) no-repeat;
+	height: 16px;
+	width: 10px;
+	margin-top: 3px;
+}
+.use-color {
+	color: #6f6f6f;
+}
+.third-icon {
+	background: url(../image/icon-1.png) no-repeat;
+	height: 14px;
+	width: 14px;
+	margin-top: 4px;
+	padding-left: 30px;
+}
+.use-pay {
+	line-height: 50px;
+}
+.cl9 {
+	color: #909090 !important;
+}
+.clb9 {
+	color: #b9b9b9 !important;
+}
+.clde {
+	color: #dedede !important;
+}
+.install-icon {
+	background: url(../image/icon-2.png) no-repeat;
+	height: 14px;
+	width: 14px;
+	margin-top: 4px;
+	padding-left: 30px;
+}
+.install-r {
+	margin-top: 15px;
+}
+.php-icon {
+	background: url(../image/icon-3.png) no-repeat;
+	height: 14px;
+	width: 14px;
+	margin-top: 4px;
+	padding-left: 30px;
+}
+.faq>div {
+	display: inline-block;
+	vertical-align: top;
+}
+.faq-r {
+	width: calc(100% - 269px);
+	background: #f5f5f5;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+	margin-bottom: 50px;
+}
+.templet {
+	border-bottom: 1px solid #E1E1E1;
+	padding: 26px 23px;
+}
+.templet:last-child {
+	border-bottom: none;
+}
+.templet-f {
+	width: 275px;
+}
+.templet>div {
+	display: inline-block;
+	font-size: 0;
+	vertical-align: top;
+}
+.templet-cn {
+	width: calc(100% - 275px);
+}
+.copy-icon {
+	background: url(../image/icon-5.png) no-repeat;
+	height: 7px;
+	width: 6px;
+	margin-right: 10px;
+	margin-top: 8px;
+}
+.copy-icon1 {
+	background: url(../image/icon-16.png) no-repeat;
+	height: 15px;
+	width: 13px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+.third-img {
+	width: 608px;
+	height: 421px;
+}
+.fqa-line {
+	border-bottom: 1px dashed #E1E1E1;
+	margin-top: 30px;
+}
+.third-QQ {
+	widows: 604px;
+	height: 688px;
+}
+.faq-color {
+	color: #636363;
+}
+.third-bg {
+	background: url(../image/bg1.png) no-repeat;
+	width: 508px;
+	height:202px;
+	position: absolute;
+	z-index: 11;
+}
+.third-box {
+	top: 122px;
+	left: 230px;
+}
+.pay-box {
+	top: 313px;
+	left: 230px;
+}
+.third-box a, .pay-box a {
+	display: inline-block;
+	color: #6f6f6f;
+}
+.third-box a:hover {
+	background: #ebebeb;
+}
+.third-dom {
+	width:auto;
+	min-width:120px;
+	height: 35px;
+	display: block;
+	cursor: pointer;
+	background: #F5F5F5;
+	line-height: 24px;
+	position: relative;
+	border-radius: 4px;
+	padding:5px 10px;
+	z-index: 1;
+	margin: 23px 0px 0px 40px;
+}
+.use-box a {
+	color: #6f6f6f;
+}
+.use-box:hover {
+	background: #ebebeb;
+}
+code {
+	white-space: pre-wrap;
+}

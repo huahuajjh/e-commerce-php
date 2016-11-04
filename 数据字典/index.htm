@@ -1,0 +1,4778 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>海盗数据字典</title>
+    <link rel="stylesheet" href="./static/haidao.css">
+    <link rel="stylesheet" href="./static/faq.css">
+    <link rel="stylesheet" href="./static/template.css">
+  </head>
+  <body>
+    <div class="container faq" style="padding-top: 0;width: 100%;">
+        <div class="faq-l  margin-big-right  " style="position: fixed;height: 100%;overflow-y: auto;width: 320px;">
+            <h2><a class="anchor" href="#关于数据库版本">关于数据库版本</a></h2>
+            <h2><a class="anchor" href="#admin_group【用户组】">admin_group【用户组】</a></h2>
+            <h2><a class="anchor" href="#admin_menu【自定义菜单】">admin_menu【自定义菜单】</a></h2>
+            <h2><a class="anchor" href="#admin_user【管理员管理】">admin_user【管理员管理】</a></h2>
+            <h2><a class="anchor" href="#adv【广告管理】">adv【广告管理】</a></h2>
+            <h2><a class="anchor" href="#adv_position【广告位管理】">adv_position【广告位管理】</a></h2>
+            <h2><a class="anchor" href="#article【文章】">article【文章】</a></h2>
+            <h2><a class="anchor" href="#article_category【文章分类】">article_category【文章分类】</a></h2>
+            <h2><a class="anchor" href="#attachment【附件】">attachment【附件】</a></h2>
+            <h2><a class="anchor" href="#attribute【属性】">attribute【属性】</a></h2>
+            <h2><a class="anchor" href="#brand【品牌列】">brand【品牌列】</a></h2>
+            <h2><a class="anchor" href="#car【购物车】">car【购物车】</a></h2>
+            <h2><a class="anchor" href="#comment【商品评论】">comment【商品评论】</a></h2>
+            <h2><a class="anchor" href="#delivery【配送方式设置】">delivery【配送方式设置】</a></h2>
+            <h2><a class="anchor" href="#delivery_district【配送地区】">delivery_district【配送地区】</a></h2>
+            <h2><a class="anchor" href="#district【地区】">district【地区】</a></h2>
+            <h2><a class="anchor" href="#focus【首页幻灯片】">focus【首页幻灯片】</a></h2>
+            <h2><a class="anchor" href="#friendlink【友情链接】">friendlink【友情链接】</a></h2>
+            <h2><a class="anchor" href="#goods_attribute【商品属性】">goods_attribute【商品属性】</a></h2>
+            <h2><a class="anchor" href="#goods_category【商品分类】">goods_category【商品分类】</a></h2>
+            <h2><a class="anchor" href="#goods_consult【商品咨询】">goods_consult【商品咨询】</a></h2>
+            <h2><a class="anchor" href="#goods_index【商品索引】">goods_index【商品索引】</a></h2>
+            <h2><a class="anchor" href="#goods_sku【商品sku】">goods_sku【商品sku】</a></h2>
+            <h2><a class="anchor" href="#goods_spu【商品spu】">goods_spu【商品spu】</a></h2>
+            <h2><a class="anchor" href="#help【帮助中心】">help【帮助中心】</a></h2>
+            <h2><a class="anchor" href="#log【行为日志】">log【行为日志】</a></h2>
+            <h2><a class="anchor" href="#member【会员列表】">member【会员列表】</a></h2>
+            <h2><a class="anchor" href="#member_address【收货人信息】">member_address【收货人信息】</a></h2>
+            <h2><a class="anchor" href="#member_deposit【在线充值记录】">member_deposit【在线充值记录】</a></h2>
+            <h2><a class="anchor" href="#member_favorite【会员收藏纪录】">member_favorite【会员收藏纪录】</a></h2>
+            <h2><a class="anchor" href="#member_group【会员等级组】">member_group【会员等级组】</a></h2>
+            <h2><a class="anchor" href="#member_log【财富操作记录】">member_log【财富操作记录】</a></h2>
+            <h2><a class="anchor" href="#member_message【站内信】">member_message【站内信】</a></h2>
+            <h2><a class="anchor" href="#module【模块】">module【模块】</a></h2>
+            <h2><a class="anchor" href="#navigation【站点导航设置】">navigation【站点导航设置】</a></h2>
+            <h2><a class="anchor" href="#node【菜单&权限节点】">node【菜单&amp;权限节点】</a></h2>
+            <h2><a class="anchor" href="#notify【通知平台设置】">notify【通知平台设置】</a></h2>
+            <h2><a class="anchor" href="#notify_template【通知平台设置】">notify_template【通知平台设置】</a></h2>
+            <h2><a class="anchor" href="#order【订单管理】">order【订单管理】</a></h2>
+            <h2><a class="anchor" href="#order_delivery【订单物流】">order_delivery【订单物流】</a></h2>
+            <h2><a class="anchor" href="#order_log【订单日志记录】">order_log【订单日志记录】</a></h2>
+            <h2><a class="anchor" href="#order_parcel【发货单明细】">order_parcel【发货单明细】</a></h2>
+            <h2><a class="anchor" href="#order_parcel_log【发货单操作日志】">order_parcel_log【发货单操作日志】</a></h2>
+            <h2><a class="anchor" href="#order_refund【退款】">order_refund【退款】</a></h2>
+            <h2><a class="anchor" href="#order_refund_log【退款日志】">order_refund_log【退款日志】</a></h2>
+            <h2><a class="anchor" href="#order_refund【退货】">order_refund【退货】</a></h2>
+            <h2><a class="anchor" href="#order_refund_log【退款日志】">order_refund_log【退款日志】</a></h2>
+            <h2><a class="anchor" href="#order_server【售后】">order_server【售后】</a></h2>
+            <h2><a class="anchor" href="#order_sku【订单商品】">order_sku【订单商品】</a></h2>
+            <h2><a class="anchor" href="#order_sub【子订单】">order_sub【子订单】</a></h2>
+            <h2><a class="anchor" href="#order_tpl_parcel【发货单模版表】">order_tpl_parcel【发货单模版表】</a></h2>
+            <h2><a class="anchor" href="#order_track【订单跟踪】">order_track【订单跟踪】</a></h2>
+            <h2><a class="anchor" href="#hd_payment【第三方支付方式】">hd_payment【第三方支付方式】</a></h2>
+            <h2><a class="anchor" href="#plugin【插件】">plugin【插件】</a></h2>
+            <h2><a class="anchor" href="#pluginvar【插件变量】">pluginvar【插件变量】</a></h2>
+            <h2><a class="anchor" href="#promotion_goods【商品促销】">promotion_goods【商品促销】</a></h2>
+            <h2><a class="anchor" href="#promotion_group【组合营销】">promotion_group【组合营销】</a></h2>
+            <h2><a class="anchor" href="#promotion_order【订单促销】">promotion_order【订单促销】</a></h2>
+            <h2><a class="anchor" href="#promotion_time【限时促销】">promotion_time【限时促销】</a></h2>
+            <h2><a class="anchor" href="#queue【通知队列】">queue【通知队列】</a></h2>
+            <h2><a class="anchor" href="#setting【站点设置】">setting【站点设置】</a></h2>
+            <h2><a class="anchor" href="#spec【规格】">spec【规格】</a></h2>
+            <h2><a class="anchor" href="#type【商品类型】">type【商品类型】</a></h2>
+            <h2><a class="anchor" href="#vcode【验证码】">vcode【验证码】</a></h2>
+        </div>
+		<div class="faq-r " style="margin-left: 315px;">
+		    <h1><a id="数据库字典" class="anchor" href="#数据库字典">数据库字典</a></h1>
+            <h2><a id="关于数据库版本" class="anchor" href="#关于数据库版本">关于数据库版本</a></h2>
+            <p>海盗云商系统(以下简称海盗)数据库是标标准的<code>Mysql</code>数据库,使用本系统请保证数据库版本&gt;<code>5.0</code>。</p>
+<h2><a id="admin_group【用户组】" class="anchor" href="#admin_group【用户组】">admin_group【用户组】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id​</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>用户组id,自增主键</td>
+</tr>
+<tr>
+<td>type</td>
+<td>tinyint(4)</td>
+<td>NOT NULL​</td>
+<td>组类型</td>
+</tr>
+<tr>
+<td>title</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>用户组中文名称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(80)</td>
+<td>NOT NULL​</td>
+<td>描述信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>用户组状态：为1正常，为0禁用,-1为删除</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>varchar(500)</td>
+<td>NOT NULL​</td>
+<td>用户组拥有的规则id，多个规则 , 隔开</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="admin_menu【自定义菜单】" class="anchor" href="#admin_menu【自定义菜单】">admin_menu【自定义菜单】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自定义菜单id,自增主键</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>所属用户id</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>自定义菜单链接</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>自定义菜单标题</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="admin_user【管理员管理】" class="anchor" href="#admin_user【管理员管理】">admin_user【管理员管理】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增id号,管理员代码</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>管理组ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(60)</td>
+<td>NOT NULL​</td>
+<td>管理员登录名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(32)</td>
+<td>NOT NULL​</td>
+<td>管理员登录密码</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar(60)</td>
+<td>NOT NULL​</td>
+<td>管理员邮箱</td>
+</tr>
+<tr>
+<td>encrypt</td>
+<td>char(10)</td>
+<td>NOT NULL​</td>
+<td>加密因子</td>
+</tr>
+<tr>
+<td>last_login_time</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>管理员最后一次登录时间</td>
+</tr>
+<tr>
+<td>last_login_ip</td>
+<td>char(15)</td>
+<td>NOT NULL​</td>
+<td>管理员最后一次登录IP</td>
+</tr>
+<tr>
+<td>login_num</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>管理员后台登陆次数</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>Int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="adv【广告管理】" class="anchor" href="#adv【广告管理】">adv【广告管理】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>广告ID，自增主键</td>
+</tr>
+<tr>
+<td>position_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>广告位ID，调用广告位管理adv_position的id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>广告标题</td>
+</tr>
+<tr>
+<td>link</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>链接地址</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>广告描述</td>
+</tr>
+<tr>
+<td>starttime</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>endtime</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>loading</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>加载模式：0:在页面加载时直接输出广告，1:在页面加载完成后再加载广告</td>
+</tr>
+<tr>
+<td>hist</td>
+<td>int(11)</td>
+<td>NOT NULL(0)</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>广告内容</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态：0:不启用，1:启用</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="adv_position【广告位管理】" class="anchor" href="#adv_position【广告位管理】">adv_position【广告位管理】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>广告位ID，自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>广告位名称</td>
+</tr>
+<tr>
+<td>width</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>广告所占页面的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>广告所占页面的高度</td>
+</tr>
+<tr>
+<td>type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>广告类型</td>
+</tr>
+<tr>
+<td>defaultpic</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>默认图片</td>
+</tr>
+<tr>
+<td>defaulttext</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>默认描述</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态：0:系统广告，1:自定义广告</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="article【文章】" class="anchor" href="#article【文章】">article【文章】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>文章ID，自增主键</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>int(8)</td>
+<td>NOT NULL(0)</td>
+<td>文章分类ID，调用文章分类article_category的id</td>
+</tr>
+<tr>
+<td>thumb</td>
+<td>varchar(255)</td>
+<td>NOT NULL(0)</td>
+<td>文章封面图片</td>
+</tr>
+<tr>
+<td>display</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>是否显示：0:不显示，1:显示</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>文章链接</td>
+</tr>
+<tr>
+<td>dataline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>文章关键词</td>
+</tr>
+<tr>
+<td>hits</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>文章点击量</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="article_category【文章分类】" class="anchor" href="#article_category【文章分类】">article_category【文章分类】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>文章分类ID，自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>父分类</td>
+</tr>
+<tr>
+<td>display</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态：0:不显示，1:显示</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="attachment【附件】" class="anchor" href="#attachment【附件】">attachment【附件】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aid</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>附近ID，自增主键</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>module</td>
+<td>char</td>
+<td>NOT NULL</td>
+<td>所属模块</td>
+</tr>
+<tr>
+<td>catid</td>
+<td>smallint(5)</td>
+<td>NOT NULL(0)</td>
+<td>所属分类</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>char(50)</td>
+<td>NOT NULL</td>
+<td>附件名称</td>
+</tr>
+<tr>
+<td>filepath</td>
+<td>char(200)</td>
+<td>NOT NULL</td>
+<td>附件路径</td>
+</tr>
+<tr>
+<td>filesize</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>附件大小</td>
+</tr>
+<tr>
+<td>fileext</td>
+<td>char(10)</td>
+<td>NOT NULL</td>
+<td>附近扩展名</td>
+</tr>
+<tr>
+<td>isimage</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否为图片</td>
+</tr>
+<tr>
+<td>downloads</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>下载次数</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>上传时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>上传附近的客户端ip</td>
+</tr>
+<tr>
+<td>use_nums</td>
+<td>smallint(3)</td>
+<td>NOT NULL(0)</td>
+<td>使用次数</td>
+</tr>
+<tr>
+<td>authcode</td>
+<td>char(32)</td>
+<td>NOT NULL</td>
+<td>-</td>
+</tr>
+<tr>
+<td>filetype</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>附件类型</td>
+</tr>
+<tr>
+<td>md5</td>
+<td>char(32)</td>
+<td>NOT NULL</td>
+<td>md5加密后的文件名</td>
+</tr>
+<tr>
+<td>sha1</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>sha1加密后的文件名</td>
+</tr>
+<tr>
+<td>width</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>附近宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>附近高度</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>附件原名</td>
+</tr>
+<tr>
+<td>issystem</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否后台上传</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>附件完整路径，可直接用于调用附件</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="attribute【属性】" class="anchor" href="#attribute【属性】">attribute【属性】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>属性ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>属性值(逗号分隔)</td>
+</tr>
+<tr>
+<td>search</td>
+<td>smallint(2)</td>
+<td>NOT NULL(1)</td>
+<td>是否参与筛选</td>
+</tr>
+<tr>
+<td>type</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>输入控件的类型,radio:单选,checkbox:复选,input:输入</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="brand【品牌列】" class="anchor" href="#brand【品牌列】">brand【品牌列】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>品牌id,自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>品牌名称</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>上传的该公司Logo图片</td>
+</tr>
+<tr>
+<td>descript</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>品牌描述</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>品牌的网址</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态(是否显示，显示:1,隐藏:0)</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>isrecommend</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否推荐</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="car【购物车】" class="anchor" href="#car【购物车】">car【购物车】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>购物车id，自增主键</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>用户id，取用户列member的id</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品sku_id</td>
+</tr>
+<tr>
+<td>nums</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>系统时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>操作IP地址</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="comment【商品评论】" class="anchor" href="./static/海盗数据字典.htm">comment【商品评论】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>商品评论id，自增主键</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品sku_id,调用goods_sku表的sku_id</td>
+</tr>
+<tr>
+<td>spu_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品spu_id,调用goods_spu表的id</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>用户ID，调用member表的id</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>写入用户名</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>评论内容</td>
+</tr>
+<tr>
+<td>reply_content</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>评论回复</td>
+</tr>
+<tr>
+<td>reply_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>回复时间</td>
+</tr>
+<tr>
+<td>imgs</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>评论图册</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL(0)</td>
+<td>评论时的用户IP</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>评论时间</td>
+</tr>
+<tr>
+<td>mood</td>
+<td>enum('positive','neutral','negative')</td>
+<td>NOT NULL</td>
+<td>positive：好评；neutral：中评；negative：差评</td>
+</tr>
+<tr>
+<td>is_shield</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>评论状态：0：未审核 1: 已审核</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="delivery【配送方式设置】" class="anchor" href="#delivery【配送方式设置】">delivery【配送方式设置】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>配送方式id,自增主键</td>
+</tr>
+<tr>
+<td>identif</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>配送方式标识</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>配送方式名称</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>开关(1:开启,0:关闭)</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>配送方式logo</td>
+</tr>
+<tr>
+<td>insure</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>物流保价费用</td>
+</tr>
+<tr>
+<td>tpl</td>
+<td>text</td>
+<td>-</td>
+<td>快递单模版</td>
+</tr>
+<tr>
+<td>systime</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>操作时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="delivery_district【配送地区】" class="anchor" href="#delivery_district【配送地区】">delivery_district【配送地区】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>tinyint(3)</td>
+<td>NOT NULL​</td>
+<td>配送地区id,自增主键</td>
+</tr>
+<tr>
+<td>delivery_id</td>
+<td>int(8)</td>
+<td>NOT NULL(0)</td>
+<td>配送方式ID</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>配送金额</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>地区ID</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="district【地区】" class="anchor" href="#district【地区】">district【地区】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>区域ID</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>父级区域ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>区域名称</td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>邮编</td>
+</tr>
+<tr>
+<td>pinyin</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>区域名称拼音</td>
+</tr>
+<tr>
+<td>lng</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>经度</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>纬度</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(50)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>location</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>定位方式</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="focus【首页幻灯片】" class="anchor" href="#focus【首页幻灯片】">focus【首页幻灯片】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>smallint(5)</td>
+<td>NOT NULL​</td>
+<td>幻灯片id,自增主键</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>幻灯片名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>幻灯片链接地址</td>
+</tr>
+<tr>
+<td>thumb</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>幻灯片图片</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>幻灯片描述</td>
+</tr>
+<tr>
+<td>width</td>
+<td>int(4)</td>
+<td>NOT NULL</td>
+<td>幻灯片宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int(4)</td>
+<td>NOT NULL</td>
+<td>幻灯片高度</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>是否新窗口打开</td>
+</tr>
+<tr>
+<td>display</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态：0：不显示 1: 显示</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="friendlink【友情链接】" class="anchor" href="#friendlink【友情链接】">friendlink【友情链接】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>smallint(5)</td>
+<td>NOT NULL​</td>
+<td>友情链接id,自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>友情链接名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>友情链接地址</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>友情链接logo</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>是否新窗口打开</td>
+</tr>
+<tr>
+<td>display</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态：0：不显示 1: 显示</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_attribute【商品属性】" class="anchor" href="#goods_attribute【商品属性】">goods_attribute【商品属性】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sku_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>商品ID</td>
+</tr>
+<tr>
+<td>attribute_id</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>属性ID</td>
+</tr>
+<tr>
+<td>attribute_value</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>属性值</td>
+</tr>
+<tr>
+<td>type</td>
+<td>smallint(1)</td>
+<td>NOT NULL</td>
+<td>规格值</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态(是否显示，显示:1,隐藏:0)</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_category【商品分类】" class="anchor" href="#goods_category【商品分类】">goods_category【商品分类】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>分类id,自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>分类父id</td>
+</tr>
+<tr>
+<td>type_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>关联类型id</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>分类关键词，利于搜索引擎优化</td>
+</tr>
+<tr>
+<td>descript</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>分类描述，利于搜索引擎优化</td>
+</tr>
+<tr>
+<td>show_in_nav</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否在导航中显示,状态:0:关闭，1:开启</td>
+</tr>
+<tr>
+<td>grade</td>
+<td>text</td>
+<td>NOT NULL(0)</td>
+<td>价格分级</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态:0:关闭，1:开启</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>img</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>分类前面的小图标</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>外部链接</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_consult【商品咨询】" class="anchor" href="#goods_consult【商品咨询】">goods_consult【商品咨询】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>商品咨询id，自增主键</td>
+</tr>
+<tr>
+<td>spu_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品spu_id,调用goods_sku的sku_id</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品sku_id,调用goods_spu的id</td>
+</tr>
+<tr>
+<td>question</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>咨询内容</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>咨询人会员ID，非会员为空</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>咨询用户名</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>咨询时间</td>
+</tr>
+<tr>
+<td>reply_content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>评论回复</td>
+</tr>
+<tr>
+<td>reply_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>回复时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>评论时的用户IP</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>评论状态：0：未审核 1: 已审核</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>see</td>
+<td>int(1)</td>
+<td>NOT NULL(100)</td>
+<td>是否查看</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_index【商品索引】" class="anchor" href="#goods_index【商品索引】">goods_index【商品索引】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>商品sku_id，自增主键</td>
+</tr>
+<tr>
+<td>spu_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品spu_id,调用goods_spu的id</td>
+</tr>
+<tr>
+<td>cat_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>所属分类id</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>smallint(6)</td>
+<td>NOT NULL</td>
+<td>所属品牌id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>商品状态：-1：删除；0：未上架；1：已上架</td>
+</tr>
+<tr>
+<td>sales</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>销量</td>
+</tr>
+<tr>
+<td>hits</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td>show_in_lists</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否在列表中显示</td>
+</tr>
+<tr>
+<td>status_ext</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>商品标签：1：促销；2：热卖；3：新品；4：推荐</td>
+</tr>
+<tr>
+<td>shop_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td>favorites</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>收藏数</td>
+</tr>
+<tr>
+<td>attr_ids</td>
+<td>text</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>spec_ids</td>
+<td>text</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_sku【商品sku】" class="anchor" href="#goods_sku【商品sku】">goods_sku【商品sku】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>商品sku_id，自增主键</td>
+</tr>
+<tr>
+<td>spu_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>商品spu_id,调用goods_spu的id</td>
+</tr>
+<tr>
+<td>sku_name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>所属分类id</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>副标题，广告语</td>
+</tr>
+<tr>
+<td>style</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>副标题subtitle的颜色属性</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>商品货号</td>
+</tr>
+<tr>
+<td>barcode</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>商品条形码</td>
+</tr>
+<tr>
+<td>spec</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>商品规格</td>
+</tr>
+<tr>
+<td>imgs</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>商品图册</td>
+</tr>
+<tr>
+<td>thumb</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>商品缩略图</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>商品状态：-1：删除；0：未上架；1：已上架</td>
+</tr>
+<tr>
+<td>status_ext</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>商品标签：1：促销；2：热卖；3：新品；4：推荐</td>
+</tr>
+<tr>
+<td>number</td>
+<td>smallint(5)</td>
+<td>NOT NULL(0)</td>
+<td>商品库存</td>
+</tr>
+<tr>
+<td>market_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>市场价</td>
+</tr>
+<tr>
+<td>shop_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>销售价</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品关键词</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品描述</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品详情</td>
+</tr>
+<tr>
+<td>show_in_lists</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否在列表中显示</td>
+</tr>
+<tr>
+<td>warn_number</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(0)</td>
+<td>库存警告</td>
+</tr>
+<tr>
+<td>prom_type</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>促销类型</td>
+</tr>
+<tr>
+<td>prom_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>促销id</td>
+</tr>
+<tr>
+<td>up_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>上架时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="goods_spu【商品spu】" class="anchor" href="#goods_spu【商品spu】">goods_spu【商品spu】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>商品spu_id，自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>所属分类id</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>副标题，广告语</td>
+</tr>
+<tr>
+<td>style</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>副标题subtitle的颜色属性</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>商品货号</td>
+</tr>
+<tr>
+<td>cat_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>所属分类id</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>smallint(6)</td>
+<td>NOT NULL</td>
+<td>所属品牌id</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品关键词</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品描述</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品详情</td>
+</tr>
+<tr>
+<td>specs</td>
+<td>text</td>
+<td>-</td>
+<td>商品全部规格</td>
+</tr>
+<tr>
+<td>imgs</td>
+<td>text</td>
+<td>-</td>
+<td>商品图册</td>
+</tr>
+<tr>
+<td>thumb</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>商品缩略图</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>商品状态：-1：删除；0：未上架；1：已上架</td>
+</tr>
+<tr>
+<td>sku_total</td>
+<td>smallint(5)</td>
+<td>NOT NULL(0)</td>
+<td>商品总数</td>
+</tr>
+<tr>
+<td>min_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>最小价格</td>
+</tr>
+<tr>
+<td>max_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>最大价格</td>
+</tr>
+<tr>
+<td>warn_number</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(0)</td>
+<td>库存警告</td>
+</tr>
+<tr>
+<td>give_point</td>
+<td>int(11)</td>
+<td>NOT NULL(-1)</td>
+<td>购买商品获得积分</td>
+</tr>
+<tr>
+<td>spec_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>上传图片时与规格关联的id</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="help【帮助中心】" class="anchor" href="#help【帮助中心】">help【帮助中心】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>smallint(6)</td>
+<td>NOT NULL​</td>
+<td>帮助ID，自增主键</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>帮助父id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>超链接</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>帮助关键词</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>帮助标题</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>帮助内容</td>
+</tr>
+<tr>
+<td>displ</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>状态：0:不显示，1:显示</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="log【行为日志】" class="anchor" href="#log【行为日志】">log【行为日志】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>执行用户id</td>
+</tr>
+<tr>
+<td>action_ip</td>
+<td>char(15)</td>
+<td>NOT NULL​</td>
+<td>执行行为者ip</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>日志备注</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(2)</td>
+<td>NOT NULL(1)</td>
+<td>状态（-1：已删除，0：禁用，1：正常）</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>执行行为的时间</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL(0)</td>
+<td>操作URL</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member【会员列表】" class="anchor" href="#member【会员列表】">member【会员列表】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>会员id,自增主键</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>用户名(索引唯一)</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>会员Email(索引唯一)</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(32)</td>
+<td>NOT NULL</td>
+<td>会员密码</td>
+</tr>
+<tr>
+<td>encrypt</td>
+<td>char(10)</td>
+<td>NOT NULL</td>
+<td>加密因子</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>smallint(6)</td>
+<td>NOT NULL</td>
+<td>会员分组，调用user_group的id</td>
+</tr>
+<tr>
+<td>register_time</td>
+<td>Int(10)</td>
+<td>NOT NULL(0)</td>
+<td>注册时间</td>
+</tr>
+<tr>
+<td>register_ip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>注册ip</td>
+</tr>
+<tr>
+<td>login_time</td>
+<td>Int(10)</td>
+<td>NOT NULL(0)</td>
+<td>登录时间</td>
+</tr>
+<tr>
+<td>login_ip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>登录ip</td>
+</tr>
+<tr>
+<td>login_num</td>
+<td>smallint(6)</td>
+<td>NOT NULL</td>
+<td>登录次数</td>
+</tr>
+<tr>
+<td>islock</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>是否锁定</td>
+</tr>
+<tr>
+<td>freeze_money</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL</td>
+<td>冻结金额</td>
+</tr>
+<tr>
+<td>exp</td>
+<td>int(8)</td>
+<td>NOT NULL(0)</td>
+<td>会员经验值</td>
+</tr>
+<tr>
+<td>emailstatus</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>邮箱认证状态</td>
+</tr>
+<tr>
+<td>mobilestatus</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>手机认证状态</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_address【收货人信息】" class="anchor" href="#member_address【收货人信息】">member_address【收货人信息】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>收货人信息id,自增主键</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>会员id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>收货人的手机号</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>区划ID</td>
+</tr>
+<tr>
+<td>address</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>收货人的详细地址</td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>收货人的邮编</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态  默认:1</td>
+</tr>
+<tr>
+<td>isdefault</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否默认</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_deposit【在线充值记录】" class="anchor" href="#member_deposit【在线充值记录】">member_deposit【在线充值记录】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>在线充值ID,自增主键</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>money</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>充值金额</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(32)</td>
+<td>NOT NULL​</td>
+<td>唯一订单号</td>
+</tr>
+<tr>
+<td>order_time</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>唯一订单号</td>
+</tr>
+<tr>
+<td>pay_code</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>支付接口</td>
+</tr>
+<tr>
+<td>trade_sn</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>第三方交易号</td>
+</tr>
+<tr>
+<td>trade_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>交易状态（第三方）</td>
+</tr>
+<tr>
+<td>trade_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>订单时间</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>intinyintt(1)</td>
+<td>NOT NULL(0)</td>
+<td>订单状态（是否已入账）</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_favorite【会员收藏纪录】" class="anchor" href="#member_favorite【会员收藏纪录】">member_favorite【会员收藏纪录】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>收藏记录id,自增主键</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>会员id</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>收藏商品的sku_id</td>
+</tr>
+<tr>
+<td>sku_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>收藏商品时的价格</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>收藏时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>收藏ip</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_group【会员等级组】" class="anchor" href="#member_group【会员等级组】">member_group【会员等级组】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>smallint(6)</td>
+<td>NOT NULL​</td>
+<td>会员等级id，自增组件，其中0为匿名会员，即非会员</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(30)</td>
+<td>NOT NULL(0)</td>
+<td>会员等级名称</td>
+</tr>
+<tr>
+<td>min_points</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>该等级的最低经验值</td>
+</tr>
+<tr>
+<td>max_points</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>该等级的最高经验值</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(0)</td>
+<td>该会员等级的商品折扣</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>状态</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>等级描述</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_log【财富操作记录】" class="anchor" href="#member_log【财富操作记录】">member_log【财富操作记录】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增id</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>会员id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>变动数目</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>变动说明</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>变动时间</td>
+</tr>
+<tr>
+<td>type</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>变动类型</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>操作id</td>
+</tr>
+<tr>
+<td>money_detail</td>
+<td>tinytext</td>
+<td>NOT NULL</td>
+<td>当前资金明细</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="member_message【站内信】" class="anchor" href="#member_message【站内信】">member_message【站内信】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>站内信id，自增主键</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>接收用户ID</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>站内信标题</td>
+</tr>
+<tr>
+<td>message</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>站内信内容</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>状态:短信是否已读：0:未读 1:已读 2:用户删除</td>
+</tr>
+<tr>
+<td>delstatus</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>删除状态</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="module【模块】" class="anchor" href="#module【模块】">module【模块】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>identifier</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>模块标识</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>模块名称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>模块简洁</td>
+</tr>
+<tr>
+<td>version</td>
+<td>char(50)</td>
+<td>NOT NULL</td>
+<td>版本</td>
+</tr>
+<tr>
+<td>author</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>模块作者</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>模块链接</td>
+</tr>
+<tr>
+<td>setting</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>模块配置</td>
+</tr>
+<tr>
+<td>install_time</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>安装时间</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>issystem</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否是系统模块</td>
+</tr>
+<tr>
+<td>isenabled</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>启用状态</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="navigation【站点导航设置】" class="anchor" href="#navigation【站点导航设置】">navigation【站点导航设置】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>导航ID，自增主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>导航名称</td>
+</tr>
+<tr>
+<td>url</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>链接地址</td>
+</tr>
+<tr>
+<td>display</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>是否启用（默认为1）</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>是否新窗口打开</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="node【菜单&amp;权限节点】" class="anchor" href="#node【菜单&权限节点】">node【菜单&amp;权限节点】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>smallint(6)</td>
+<td>NOT NULL​</td>
+<td>菜单ID，自增主键</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>上级菜单ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>char(40)</td>
+<td>NOT NULL</td>
+<td>菜单名称</td>
+</tr>
+<tr>
+<td>g</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>所属控制器</td>
+</tr>
+<tr>
+<td>m</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>所属模块</td>
+</tr>
+<tr>
+<td>a</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>所属操作</td>
+</tr>
+<tr>
+<td>param</td>
+<td>char(100)</td>
+<td>NOT NULL</td>
+<td>参数</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(1)</td>
+<td>是否显示,默认为1</td>
+</tr>
+<tr>
+<td>url</td>
+<td>char(255)</td>
+<td>NOT NULL</td>
+<td>链接地址</td>
+</tr>
+<tr>
+<td>pluginid</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>插件ID</td>
+</tr>
+<tr>
+<td>split</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>分割线</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="notify【通知平台设置】" class="anchor" href="#notify【通知平台设置】">notify【通知平台设置】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>通知接口标识</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(250)</td>
+<td>NOT NULL​</td>
+<td>通知接口名称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(250)</td>
+<td>NOT NULL​</td>
+<td>通知接口简介</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>启用状态</td>
+</tr>
+<tr>
+<td>config</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>接口配置</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>ignore</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>排除通知的类型</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="notify_template【通知平台设置】" class="anchor" href="#notify_template【通知平台设置】">notify_template【通知平台设置】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>嵌入点名称</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>开关配置信息</td>
+</tr>
+<tr>
+<td>template</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>模版设置</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>嵌入点备注名称</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order【订单管理】" class="anchor" href="#order【订单管理】">order【订单管理】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>订单id，自增主键</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>买家id</td>
+</tr>
+<tr>
+<td>seller_ids</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>卖家ids</td>
+</tr>
+<tr>
+<td>source</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(1)</td>
+<td>订单来源(1：标准，2：wap，3：wechat)</td>
+</tr>
+<tr>
+<td>pay_type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(1)</td>
+<td>支付类型(1：在线支付，2：货到付款)</td>
+</tr>
+<tr>
+<td>sku_amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>商品总额</td>
+</tr>
+<tr>
+<td>delivery_amount</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>物流总额</td>
+</tr>
+<tr>
+<td>real_amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>应付总额</td>
+</tr>
+<tr>
+<td>paid_amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>实付总额</td>
+</tr>
+<tr>
+<td>balance_amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>余额付款总额</td>
+</tr>
+<tr>
+<td>promot_amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>所有优惠总额</td>
+</tr>
+<tr>
+<td>pay_method</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>支付方式</td>
+</tr>
+<tr>
+<td>pay_sn</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>第三方支付号</td>
+</tr>
+<tr>
+<td>address_name</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>address_mobile</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>收货人电话</td>
+</tr>
+<tr>
+<td>address_detail</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>收货详细地址</td>
+</tr>
+<tr>
+<td>address_district_ids</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>收货地区ids(统计索引)</td>
+</tr>
+<tr>
+<td>invoice_tax</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>发票税率</td>
+</tr>
+<tr>
+<td>invoice_title</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>发票抬头</td>
+</tr>
+<tr>
+<td>invoice_content</td>
+<td>varchar(100)</td>
+<td>NOT NULL​</td>
+<td>发票内容</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(1)</td>
+<td>订单状态(1：正常，2：全部取消，3：全部回收，4：全部删除)</td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>是否支付(布尔值)</td>
+</tr>
+<tr>
+<td>confirm_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>确认状态(0：待确认，1：部分确认，2：已确认)</td>
+</tr>
+<tr>
+<td>delivery_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>发货状态(0：待发货，1：部分发货，2：已发货)</td>
+</tr>
+<tr>
+<td>finish_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>完成状态(0：待完成，1：部分完成，2：已完成)</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>支付时间</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>system_time</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_delivery【订单物流】" class="anchor" href="#order_delivery【订单物流】">order_delivery【订单物流】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(11)</td>
+<td>NOT NULL​</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>o_sku_ids</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>订单商品列表(多个用","逗号分割)</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>delivery_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>物流id</td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>varchar(20)</td>
+<td>NOT NULL​</td>
+<td>所属物流</td>
+</tr>
+<tr>
+<td>delivery_sn</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>运单号</td>
+</tr>
+<tr>
+<td>delivery_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>发货时间</td>
+</tr>
+<tr>
+<td>isreceive</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>是否确认收货(布尔值)</td>
+</tr>
+<tr>
+<td>receive_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>确认收货时间</td>
+</tr>
+<tr>
+<td>print_time</td>
+<td>int(10)</td>
+<td>-</td>
+<td>打印时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_log【订单日志记录】" class="anchor" href="#order_log【订单日志记录】">order_log【订单日志记录】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>订单日志id，自增主键</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>action</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>操作类型</td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>操作者ID</td>
+</tr>
+<tr>
+<td>operator_name</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>操作者名称</td>
+</tr>
+<tr>
+<td>operator_type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(2)</td>
+<td>操作者类型(1:后台管理员,2:会员3:商家(预留))</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>日志详情</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>操作时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>操作IP</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_parcel【发货单明细】" class="anchor" href="#order_parcel【发货单明细】">order_parcel【发货单明细】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>配送状态</td>
+</tr>
+<tr>
+<td>member_name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>会员账号</td>
+</tr>
+<tr>
+<td>address_name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>address_mobile</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>收货人手机</td>
+</tr>
+<tr>
+<td>address_detail</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>收货人详细地址</td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>物流名称</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>系统时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_parcel_log【发货单操作日志】" class="anchor" href="#order_parcel_log【发货单操作日志】">order_parcel_log【发货单操作日志】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>parcel_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>关联发货表id</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>会员ID</td>
+</tr>
+<tr>
+<td>member_name</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>会员帐号</td>
+</tr>
+<tr>
+<td>action</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>操作明细</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>操作日志备注</td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>操作管理员ID</td>
+</tr>
+<tr>
+<td>operator_name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>管理员名称</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>系统时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_refund【退款】" class="anchor" href="#order_refund【退款】">order_refund【退款】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>return_id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>退货id</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>子订单号(空为整个订单)</td>
+</tr>
+<tr>
+<td>o_sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>订单商品ID(0为整个订单)</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>会员ID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(1)</td>
+<td>退款类型(1：退货并退款，2：仅退款)</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>退款金额</td>
+</tr>
+<tr>
+<td>cause</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>退款原因</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>tinytext</td>
+<td>NOT NULL​</td>
+<td>退款描述</td>
+</tr>
+<tr>
+<td>images</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>售后传图</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>状态(-2：未通过，-1：已取消，0：待审核，1：通过)</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>申请时间</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>decimal(8)</td>
+<td>NOT NULL​(0)</td>
+<td>审核管理员ID</td>
+</tr>
+<tr>
+<td>admin_desc</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>后台审核描述</td>
+</tr>
+<tr>
+<td>admin_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)​</td>
+<td>审核时间</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>系统时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_refund_log【退款日志】" class="anchor" href="#order_refund_log【退款日志】">order_refund_log【退款日志】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>refund_id</td>
+<td>int(8)</td>
+<td>NOT NULL​(0)</td>
+<td>退款id</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>o_sku_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>订单商品ID</td>
+</tr>
+<tr>
+<td>action</td>
+<td>varchar(50)</td>
+<td>NOT NULL​(0)</td>
+<td>操作类型</td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>操作者ID</td>
+</tr>
+<tr>
+<td>operator_name</td>
+<td>varchar(60)</td>
+<td>NOT NULL​</td>
+<td>操作者名称</td>
+</tr>
+<tr>
+<td>operator_type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(2)</td>
+<td>操作者类型(1:后台管理员,2:会员3:商家(预留))</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>日志详情</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>操作时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL​</td>
+<td>操作IP地址</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_refund【退货】" class="anchor" href="#order_refund【退货】">order_refund【退货】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>子订单号(空为整个订单)</td>
+</tr>
+<tr>
+<td>o_sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>订单商品ID(0为整个订单)</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>会员ID</td>
+</tr>
+<tr>
+<td>cause</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>退款原因</td>
+</tr>
+<tr>
+<td>number</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>退款数量</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL​(0.00)</td>
+<td>退款金额</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>tinytext</td>
+<td>NOT NULL​</td>
+<td>退款描述</td>
+</tr>
+<tr>
+<td>images</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>售后传图</td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>快递名称</td>
+</tr>
+<tr>
+<td>delivery_sn</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>售后传图</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(0)</td>
+<td>状态(-2：未通过，-1：已取消，0：待审核，1：通过)</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>申请时间</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>decimal(8)</td>
+<td>NOT NULL​(0)</td>
+<td>审核管理员ID</td>
+</tr>
+<tr>
+<td>admin_desc</td>
+<td>varchar(200)</td>
+<td>NOT NULL​</td>
+<td>后台审核描述</td>
+</tr>
+<tr>
+<td>admin_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)​</td>
+<td>审核时间</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>系统时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_refund_log【退款日志】" class="anchor" href="#order_refund_log【退款日志】">order_refund_log【退款日志】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增主键</td>
+</tr>
+<tr>
+<td>return_id</td>
+<td>int(8)</td>
+<td>NOT NULL​(0)</td>
+<td>退货ID</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL​</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>o_sku_id</td>
+<td>int(10)</td>
+<td>NOT NULL​(0)</td>
+<td>订单商品ID</td>
+</tr>
+<tr>
+<td>action</td>
+<td>varchar(50)</td>
+<td>NOT NULL​(0)</td>
+<td>操作类型</td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​(0)</td>
+<td>操作者ID</td>
+</tr>
+<tr>
+<td>operator_name</td>
+<td>varchar(60)</td>
+<td>NOT NULL​</td>
+<td>操作者名称</td>
+</tr>
+<tr>
+<td>operator_type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL​(2)</td>
+<td>操作者类型(1:后台管理员,2:会员3:商家(预留))</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL​</td>
+<td>日志详情</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>操作时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL​</td>
+<td>操作IP地址</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_server【售后】" class="anchor" href="#order_server【售后】">order_server【售后】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL</td>
+<td>售后类型(1：退货并退款，2：仅退款)</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>买家id</td>
+</tr>
+<tr>
+<td>return_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>退货表主键id</td>
+</tr>
+<tr>
+<td>refund_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>退款表主键id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>售后状态</td>
+</tr>
+<tr>
+<td>o_sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>订单商品ID</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_sku【订单商品】" class="anchor" href="#order_sku【订单商品】">order_sku【订单商品】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>会员ID</td>
+</tr>
+<tr>
+<td>seller_id</td>
+<td>mediumint(10)</td>
+<td>NOT NULL(0)</td>
+<td>卖家ID</td>
+</tr>
+<tr>
+<td>sku_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>商品sku_id</td>
+</tr>
+<tr>
+<td>sku_thumb</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>产品缩略图</td>
+</tr>
+<tr>
+<td>sku_barcode</td>
+<td>varchar(30)</td>
+<td>NOT NULL</td>
+<td>产品的唯一条码(写入相对应商品条码)</td>
+</tr>
+<tr>
+<td>sku_name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>产品名称</td>
+</tr>
+<tr>
+<td>sku_spec</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>产品规格</td>
+</tr>
+<tr>
+<td>sku_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>销售售价</td>
+</tr>
+<tr>
+<td>real_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>应付金额</td>
+</tr>
+<tr>
+<td>buy_nums</td>
+<td>smallint(5)</td>
+<td>NOT NULL(0)</td>
+<td>购买数量</td>
+</tr>
+<tr>
+<td>return_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>退货id</td>
+</tr>
+<tr>
+<td>refund_id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(0)</td>
+<td>退款id</td>
+</tr>
+<tr>
+<td>delivery_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>订单物流关联id</td>
+</tr>
+<tr>
+<td>delivery_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>发货状态(0：待发货，1：已发货，2：已收货)</td>
+</tr>
+<tr>
+<td>iscomment</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否评论</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>系统时间</td>
+</tr>
+<tr>
+<td>promotion</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>促销活动详情</td>
+</tr>
+<tr>
+<td>is_give</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否为赠品</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_sub【子订单】" class="anchor" href="#order_sub【子订单】">order_sub【子订单】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(10)</td>
+<td>NOT NULL​</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>主订单id</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>pay_type</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>支付方式(1：在线支付，2：货到付款)</td>
+</tr>
+<tr>
+<td>buyer_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>买家id</td>
+</tr>
+<tr>
+<td>seller_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>卖家id</td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>物流名称</td>
+</tr>
+<tr>
+<td>sku_price</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>商品总额</td>
+</tr>
+<tr>
+<td>delivery_price</td>
+<td>decimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>物流费用</td>
+</tr>
+<tr>
+<td>real_price</td>
+<td>decimal(15,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>应付总额</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>订单状态(1：正常，2：取消，3：回收，4：删除)</td>
+</tr>
+<tr>
+<td>pay_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>支付状态</td>
+</tr>
+<tr>
+<td>confirm_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>确认状态(0：待确认，2：已确认)</td>
+</tr>
+<tr>
+<td>delivery_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>发货状态(0：待发货，1：部分发货，2：已发货)</td>
+</tr>
+<tr>
+<td>finish_status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>完成状态(0：待完成，1：部分完成，2：已完成)</td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>支付时间(时间戳)</td>
+</tr>
+<tr>
+<td>confirm_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>确认订单(时间戳)</td>
+</tr>
+<tr>
+<td>delivery_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>发货时间(时间戳)</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>完成时间(时间戳)</td>
+</tr>
+<tr>
+<td>system_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>系统时间(时间戳)</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>promotion</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>促销活动</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_tpl_parcel【发货单模版表】" class="anchor" href="#order_tpl_parcel【发货单模版表】">order_tpl_parcel【发货单模版表】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>模版名称</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>模版内容</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>修改时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="order_track【订单跟踪】" class="anchor" href="#order_track【订单跟踪】">order_track【订单跟踪】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>delivery_id</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>订单物流关联ID</td>
+</tr>
+<tr>
+<td>order_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>主订单号</td>
+</tr>
+<tr>
+<td>sub_sn</td>
+<td>char(20)</td>
+<td>NOT NULL</td>
+<td>子订单号</td>
+</tr>
+<tr>
+<td>time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>追踪时间</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>添加时间</td>
+</tr>
+<tr>
+<td>clientip</td>
+<td>char(15)</td>
+<td>NOT NULL</td>
+<td>操作IP</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="hd_payment【第三方支付方式】" class="anchor" href="#hd_payment【第三方支付方式】">hd_payment【第三方支付方式】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pay_code</td>
+<td>varchar(50)</td>
+<td>NOT NULL​</td>
+<td>第三方支付标识</td>
+</tr>
+<tr>
+<td>pay_ico</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>第三方支付图标</td>
+</tr>
+<tr>
+<td>pay_name</td>
+<td>varchar(120)</td>
+<td>NOT NULL</td>
+<td>支付方式名称</td>
+</tr>
+<tr>
+<td>pay_fee</td>
+<td>varchar(5)</td>
+<td>NOT NULL</td>
+<td>手续费</td>
+</tr>
+<tr>
+<td>pay_desc</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>支付方式描述</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>启用状态</td>
+</tr>
+<tr>
+<td>config</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>支付方式配置信息</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>int(8)</td>
+<td>NOT NULL</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>isonline</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>是否在线支付</td>
+</tr>
+<tr>
+<td>applie</td>
+<td>varchar(10)</td>
+<td>NOT NULL</td>
+<td>客户端类型</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="plugin【插件】" class="anchor" href="#plugin【插件】">plugin【插件】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pluginid</td>
+<td>smallint(6)</td>
+<td>NOT NULL​</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>available</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否启用</td>
+</tr>
+<tr>
+<td>adminid</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>管理员ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(40)</td>
+<td>NOT NULL</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>varchar(40)</td>
+<td>NOT NULL</td>
+<td>唯一标识</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL​</td>
+<td>简介</td>
+</tr>
+<tr>
+<td>datatables</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>-</td>
+</tr>
+<tr>
+<td>directory</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>目录</td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>版权信息</td>
+</tr>
+<tr>
+<td>modules</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>模块配置</td>
+</tr>
+<tr>
+<td>version</td>
+<td>varchar(20)</td>
+<td>NOT NULL</td>
+<td>版本号</td>
+</tr>
+<tr>
+<td>author</td>
+<td>varchar(250)</td>
+<td>NOT NULL</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>更新时间</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="pluginvar【插件变量】" class="anchor" href="#pluginvar【插件变量】">pluginvar【插件变量】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pluginvarid</td>
+<td>mediumint(8)</td>
+<td>NOT NULL​</td>
+<td>自增ID</td>
+</tr>
+<tr>
+<td>pluginid</td>
+<td>smallint(6)</td>
+<td>NOT NULL(0)</td>
+<td>所属插件</td>
+</tr>
+<tr>
+<td>displayorder</td>
+<td>tinyint(3)</td>
+<td>NOT NULL(0)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>varchar(40)</td>
+<td>NOT NULL​</td>
+<td>字段名</td>
+</tr>
+<tr>
+<td>type</td>
+<td>varchar(20)</td>
+<td>NOT NULL(text)</td>
+<td>字段类型</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>字段值</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>拓展信息</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="promotion_goods【商品促销】" class="anchor" href="#promotion_goods【商品促销】">promotion_goods【商品促销】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>主键id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>活动名称</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>sku_ids</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>商品列表</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>活动规则</td>
+</tr>
+<tr>
+<td>share_order</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>是否参与订单促销活动</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>mediumint(8)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="promotion_group【组合营销】" class="anchor" href="#promotion_group【组合营销】">promotion_group【组合营销】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>-</td>
+</tr>
+<tr>
+<td>title</td>
+<td>avrchar(200)</td>
+<td>NOT NULL</td>
+<td>促销标题，用于后台标识</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>组合营销名称，用于前台显示</td>
+</tr>
+<tr>
+<td>sku_ids</td>
+<td>varchar(200)</td>
+<td>NOT MULL</td>
+<td>参与组合营销的商品sku_id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>开启状态</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="promotion_order【订单促销】" class="anchor" href="#promotion_order【订单促销】">promotion_order【订单促销】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>主键id，自动递增</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(250)</td>
+<td>NOT NULL</td>
+<td>促销名称</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>type</td>
+<td>smallint(1)</td>
+<td>NOT NULL(0)</td>
+<td>促销类型(0：满额立减；1：满额免邮；2：满额赠礼)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>declimal(10,2)</td>
+<td>NOT NULL(0.00)</td>
+<td>满足金额</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>varchar(10)</td>
+<td>NOT NULL</td>
+<td>优惠项目</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL</td>
+<td>添加时间</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="promotion_time【限时促销】" class="anchor" href="#promotion_time【限时促销】">promotion_time【限时促销】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumit(8)</td>
+<td>NOT NULL</td>
+<td>主键id，自动递增</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>限时促销名称</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>sku_info</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>参与限时促销的商品信息</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="queue【通知队列】" class="anchor" href="#queue【通知队列】">queue【通知队列】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(11)</td>
+<td>NOT NULL</td>
+<td>主键id，自动递增</td>
+</tr>
+<tr>
+<td>type</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>类型/驱动</td>
+</tr>
+<tr>
+<td>method</td>
+<td>varchar(255)</td>
+<td>NOT NULL</td>
+<td>方法/操作</td>
+</tr>
+<tr>
+<td>params</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>参数</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(0)</td>
+<td>状态（-1：失败；0：待执行；1：已完成）</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NULL(0)</td>
+<td>时间戳</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>smallint(6)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="setting【站点设置】" class="anchor" href="#setting【站点设置】">setting【站点设置】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>varchar(200)</td>
+<td>NOT NULL</td>
+<td>站点设置名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>站点设置值</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="spec【规格】" class="anchor" href="#spec【规格】">spec【规格】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>规格id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(60)</td>
+<td>NOT NULL</td>
+<td>规格名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>规格值</td>
+</tr>
+<tr>
+<td>img</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>规格图片</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinytin(1)</td>
+<td>NOT NULL</td>
+<td>规格状态</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>mediumint(5)</td>
+<td>NOT NULL</td>
+<td>规格排序</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="type【商品类型】" class="anchor" href="#type【商品类型】">type【商品类型】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>mediumint(8)</td>
+<td>NOT NULL</td>
+<td>类型id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(50)</td>
+<td>NOT NULL</td>
+<td>类型名称</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>类型信息</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(100)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>NOT NULL(1)</td>
+<td>状态</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="vcode【验证码】" class="anchor" href="#vcode【验证码】">vcode【验证码】</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>NOT NULL</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(8)</td>
+<td>NOT NULL</td>
+<td>-</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>int(8)</td>
+<td>NOT NULL(0)</td>
+<td>会员id</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>char(11)</td>
+<td>NOT NULL</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>vcode</td>
+<td>text</td>
+<td>NOT NULL</td>
+<td>验证码</td>
+</tr>
+<tr>
+<td>action</td>
+<td>varchar(100)</td>
+<td>NOT NULL</td>
+<td>操作名称</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>int(10)</td>
+<td>NOT NLL(0)</td>
+<td>生成时间</td>
+</tr>
+</tbody>
+</table>			</div>
+		</div>
+
+</body></html>
